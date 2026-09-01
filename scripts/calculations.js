@@ -27,3 +27,10 @@ function calculateAverageExpense() {
     return averageExpense;
   }
 }
+
+// Calcular el saldo
+function calculateBalance() {
+  let balance = budgetValue - totalExpensesValue;
+  console.log(`Saldo: ${balance}`); // Mostrar el saldo en la consola como prueba.
+  return balance;
+}
