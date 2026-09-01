@@ -3,7 +3,6 @@ let budgetValue = 0;
 let totalExpensesValue = 0;
 
 // Calcular los gastos totales
-
 let expenseEntries = [
   ["groceries", 33],
   ["restaurants", 50],
@@ -35,5 +34,18 @@ function calculateAverageExpense() {
 function calculateBalance() {
   let balance = budgetValue - totalExpensesValue;
   console.log(`Saldo: ${balance}`); // Mostrar el saldo en la consola como prueba.
+  updateBalanceColor(balance); // Llamar a la función para actualizar el color del saldo para enviar el valor de balance como parametro
   return balance;
+}
+
+// Cambiar el color del saldo y asigna el presupuesto
+let balanceColor = "green"; // Color predeterminado para el saldo positivo
+function updateBalanceColor(balance) {
+  if (balance >= (budgetValue * 0.25)) {
+    balanceColor = "green";
+  } else if (balance < (budgetValue * 0.25) && balance > 0){
+    balanceColor = "orange";
+  } else {
+    balanceColor = "red"; 
+  }
 }
