@@ -41,16 +41,7 @@ function calculateBalance() {
 
 // Cambiar el color del saldo y asigna el presupuesto
 function updateBalanceColor() {
-  // if (balance >= (budgetValue * 0.25)) {
-  //   balanceColor = "green";
-  // } else if (balance < (budgetValue * 0.25) && balance >= 0){
-  //   balanceColor = "orange";
-  // } else {
-  //   balanceColor = "red";
-  // }
-  console.log(`Saldo: ${balance}, Color del saldo: ${balanceColor}`); // Mostrar el saldo y el color del saldo en la consola como prueba.
-
-  if (balance < 0) {
+   if (balance < 0) {
     balanceColor = "red";
   } else if (balance < budgetValue * 0.25) {
     balanceColor = "orange";
@@ -58,4 +49,16 @@ function updateBalanceColor() {
     balanceColor = "green";
   }
 }
-// Start test----------------------------------------
+
+// Calcula las estadísticas por categoría
+function calculateCategoryExpenses(categoria){
+  let categoryTotal = 0;
+  for (let i = 0; i < expenseEntries.length; i++) {
+    if (expenseEntries[i][0] === categoria) {
+      categoryTotal += expenseEntries[i][1];
+    }
+  }
+  return categoryTotal;
+}
+
+
