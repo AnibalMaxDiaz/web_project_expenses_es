@@ -34,7 +34,7 @@ function calculateAverageExpense() {
 
 // Calcular el saldo
 function calculateBalance() {
-  let balance = budgetValue - totalExpensesValue;
+  balance = budgetValue - totalExpensesValue;
   console.log(`Saldo: ${balance}`); // Mostrar el saldo en la consola como prueba.
   return balance;
 }
@@ -50,7 +50,7 @@ function updateBalanceColor() {
   // }
   console.log(`Saldo: ${balance}, Color del saldo: ${balanceColor}`); // Mostrar el saldo y el color del saldo en la consola como prueba.
 
-  if (balance <= 0) {
+  if (balance < 0) {
     balanceColor = "red";
   } else if (balance < budgetValue * 0.25) {
     balanceColor = "orange";
