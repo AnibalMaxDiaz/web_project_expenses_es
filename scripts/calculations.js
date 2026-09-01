@@ -1,3 +1,4 @@
+// Inicializar variables para el presupuesto y crear un array de entradas de gastos
 let budgetValue = 0;
 let totalExpensesValue = 0;
 let expenseEntries = [
@@ -9,7 +10,20 @@ let expenseEntries = [
   ["groceries", 33],
   ["subscriptions", 14],
 ];
+
+// Calcular el valor total de los gastos
 for (let i = 0; i < expenseEntries.length; i++) {
   totalExpensesValue += expenseEntries[i][1];
   console.log(`Valor total de los gastos:  ${totalExpensesValue}`);
+}
+
+// Calcular el gasto medio
+function calculateAverageExpense() {
+  if (expenseEntries.length === 0) {
+    return 0; // Evitar la división por cero si no hay entradas de gastos
+  } else {
+    let averageExpense = totalExpensesValue / expenseEntries.length;
+    console.log(`Gasto medio: ${averageExpense}`); // Mostrar el gasto medio en la consola como prueba.
+    return averageExpense;
+  }
 }
