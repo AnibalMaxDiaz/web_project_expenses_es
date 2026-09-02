@@ -3,6 +3,7 @@ let budgetValue = 0;
 let totalExpensesValue = 0;
 let balanceColor = "green"; // Color predeterminado para el saldo positivo
 let balance = 0; // Inicializar la variable balance
+let categoriesData = [];
 
 // Calcular los gastos totales
 let expenseEntries = [
@@ -63,30 +64,25 @@ function calculateCategoryExpenses(categoria) {
 
 // Calcular la categoría de gastos más grande
 function calculateLargestCategory() {
-  expenseCategories = [
+  let expenseCategories = [
     "groceries",
     "restaurants",
     "transport",
     "home",
     "subscriptions",
   ];
-  let largestCategory = "";
-  let largestCategoryValue = 0;
-  let categoriesData = [];
-  let uniqueCategorie = "";
-  let uniqueCategorieValue = 0;
   for (let i = 0; i < expenseCategories.length; i++) {
-    uniqueCategorie = expenseEntries[i][0];
-    uniqueCategorieValue = 0; // Reiniciar el valor para cada categoría     
-    for (let j = 0; j < expenseEntries.length; j++) {
-      if (uniqueCategorie === expenseCategories[i] && uniqueCategorie === expenseEntries[j][0]) {
-        uniqueCategorieValue += expenseEntries[j][1];
-      } else {
-        continue;
-      }
-    }
-    console.log(categoriesData);
-    categoriesData.push([uniqueCategorie, uniqueCategorieValue]);
+    let categoryTotal = calculateCategoryExpenses(expenseCategories[i]);
+    categoriesData.push([expenseCategories[i], categoryTotal]);
   }
-
+  let largestCategoryValue = 0;
+  let largestCategory = [];
+  for (let i = 0; i < categoriesData.length; i++) {
+    if (categoriesData[i][1] > largestCategoryValue) {
+      largestCategoryValue = categoriesData[i][1];
+      largestCategory = categoriesData[i][0];
+    }
+  }
+  console.log(largestCategory);
+  return largestCategory;
 }
