@@ -86,3 +86,10 @@ function calculateLargestCategory() {
   console.log(largestCategory);
   return largestCategory;
 }
+
+// Añadir nuevos gastos
+function addExpenseEntry(expenseEntry) {
+  totalExpensesValue += expenseEntry[1];
+  console.log(expenseEntry[1]);
+  expenseEntries.push(expenseEntry);
+}
