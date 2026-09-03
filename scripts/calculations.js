@@ -19,7 +19,6 @@ let expenseEntries = [
 // Calcular el valor total de los gastos
 for (let i = 0; i < expenseEntries.length; i++) {
   totalExpensesValue += expenseEntries[i][1];
-  console.log(`Valor total de los gastos:  ${totalExpensesValue}`);
 }
 
 // Calcular el gasto medio
@@ -28,7 +27,6 @@ function calculateAverageExpense() {
     return 0; // Evitar la división por cero si no hay entradas de gastos
   } else {
     let averageExpense = totalExpensesValue / expenseEntries.length;
-    console.log(`Gasto medio: ${averageExpense}`); // Mostrar el gasto medio en la consola como prueba.
     return averageExpense;
   }
 }
@@ -36,7 +34,6 @@ function calculateAverageExpense() {
 // Calcular el saldo
 function calculateBalance() {
   balance = budgetValue - totalExpensesValue;
-  console.log(`Saldo: ${balance}`); // Mostrar el saldo en la consola como prueba.
   return balance;
 }
 
@@ -83,13 +80,11 @@ function calculateLargestCategory() {
       largestCategory = categoriesData[i][0];
     }
   }
-  console.log(largestCategory);
   return largestCategory;
 }
 
 // Añadir nuevos gastos
 function addExpenseEntry(expenseEntry) {
   totalExpensesValue += expenseEntry[1];
-  console.log(expenseEntry[1]);
   expenseEntries.push(expenseEntry);
 }
