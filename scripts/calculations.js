@@ -3,7 +3,6 @@ let budgetValue = 0;
 let totalExpensesValue = 0;
 let balanceColor = "green"; // Color predeterminado para el saldo positivo
 let balance = 0; // Inicializar la variable balance
-let categoriesData = [];
 
 // Calcular los gastos totales
 let expenseEntries = [
@@ -61,6 +60,7 @@ function calculateCategoryExpenses(categoria) {
 
 // Calcular la categoría de gastos más grande
 function calculateLargestCategory() {
+  let categoriesData = [];
   let expenseCategories = [
     "groceries",
     "restaurants",
